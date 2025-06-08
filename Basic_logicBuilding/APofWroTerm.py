@@ -54,6 +54,9 @@ def nthTermOfAP(a1,a2,n):
     nthTerm = a1 + (n-1) * (a2-a1)
     return nthTerm
 
+# Time Complexity - O(1)
+# Auxiliary Space - O(1)
+
 
 print(get_nth_term(a1=2, a2=5,n=3) )   
 print(nthTermOfAP(a1=2, a2=5,n=3) )   
