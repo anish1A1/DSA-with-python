@@ -100,6 +100,6 @@ def num_close_to_n_and_DivisibleBy_n(n : int,m : int) ->int:
 #else n2 is the closest
    
    
-   
+
         
 print(num_close_to_n_and_DivisibleBy_n(-15,6))
