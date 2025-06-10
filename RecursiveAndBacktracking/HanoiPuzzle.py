@@ -54,3 +54,4 @@ N=4
 TowerOfHanoi(N, 'A', 'B', 'C')
 
 # Time Complexity --> 2 to the power n  --> Exponential
+# This hanoi problem can have multiple numbers of Disk but the solution of all them is same
