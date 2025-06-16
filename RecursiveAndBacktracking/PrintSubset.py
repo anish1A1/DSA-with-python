@@ -31,3 +31,39 @@ def printSubset(arr):
 print(f"{printSubset([1,2,3])}")
     
     
+    
+"""
+ How Backtracking Works Visually:
+
+START dfs(0)
+    include 1 ➜ subset = [1]
+        dfs(1)
+            include 2 ➜ subset = [1, 2]
+                dfs(2)
+                    include 3 ➜ subset = [1, 2, 3]
+                        dfs(3) ➜ append [1, 2, 3]
+                    exclude 3 ➜ backtrack ➜ subset = [1, 2]
+                        dfs(3) ➜ append [1, 2]
+            exclude 2 ➜ backtrack ➜ subset = [1]
+                dfs(2)
+                    include 3 ➜ subset = [1, 3]
+                        dfs(3) ➜ append [1, 3]
+                    exclude 3 ➜ backtrack ➜ subset = [1]
+                        dfs(3) ➜ append [1]
+exclude 1 ➜ backtrack ➜ subset = []
+    dfs(1)
+        include 2 ➜ subset = [2]
+            dfs(2)
+                include 3 ➜ subset = [2, 3]
+                    dfs(3) ➜ append [2, 3]
+                exclude 3 ➜ backtrack ➜ subset = [2]
+                    dfs(3) ➜ append [2]
+        exclude 2 ➜ backtrack ➜ subset = []
+            dfs(2)
+                include 3 ➜ subset = [3]
+                    dfs(3) ➜ append [3]
+                exclude 3 ➜ backtrack ➜ subset = []
+                    dfs(3) ➜ append []
+    
+    
+"""
