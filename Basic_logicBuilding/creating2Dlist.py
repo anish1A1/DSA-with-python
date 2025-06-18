@@ -49,5 +49,57 @@ print(set([5,6,7]))
 loopset = {i for i in range(5)}
 print(loopset)
 
+print("\n")
 
 # Hashmap (aka dictionary)
+# We can define a dict using empty curly braces too.
+myMap = {}
+
+myMap['aka'] = 23
+myMap['tom'] = 89
+
+print(myMap)
+
+print(myMap['aka'])
+print("tom" in myMap)
+
+myMap.pop("tom")
+print(myMap)
+
+
+# Dict comprehension
+
+# allMap = {i:2  for i in range(4)}
+allMap = {i:2*i  for i in range(4)}
+
+print(allMap)
+print("\n")
+# Looping through dict.
+
+for key in allMap:
+    print(key, allMap[key])
+
+for val in allMap.values():
+    print(val)
+for key,val in allMap.items():
+    print(key, val)
+
+print("\n")
+
+# tuples
+
+abc =(1,2,3)
+# abc[0] = 1 # we cannot change tuples (immutable)
+print(abc)
+
+# We can use tuple to be used as key for hash map/set
+newMap = {(1,2) : 'value'}
+print(newMap)
+
+newSet = set()
+newSet.add((1,2))
+print(newSet)
+
+numbers = [1,2,3,4,5]
+mergeSet = set(numbers)
+print(mergeSet)
