@@ -16,10 +16,10 @@ def binarySerach(arr, start, end , target):
         if arr[mid] == target:
             return mid
         
-        elif arr[mid] > target:
-            return binarySerach(arr, start, mid -1, target)
-        else:
+        elif arr[mid] < target:
             return binarySerach(arr, mid +1, end, target)
+        else:
+            return binarySerach(arr, start, mid -1, target)
     else:
         return -1
     
