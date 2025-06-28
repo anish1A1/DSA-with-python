@@ -32,3 +32,4 @@ def selection_sort(arr):
 my_list = [64, 25, 12, 22, 11]
 sorted_list = selection_sort(my_list)
 print(f"Sorted list: {sorted_list}")
+
