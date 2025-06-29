@@ -6,7 +6,7 @@ def findLargest(arr):
     arr.sort()
     return arr[-1]
 
-# 0(nlog) and space 0(1)  since sorting and indexing
+# 0(nlog) and space 0(1)  since sorting takes 0(nlogn)
 
 
 
