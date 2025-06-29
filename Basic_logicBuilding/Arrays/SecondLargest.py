@@ -8,8 +8,14 @@ Now from here find the second largest
 catch -> it will become [1,3,5,6,6] but the second last index ( 6 ) is not second largest it is 5
 
 
-"""
 
+
+"""
+"""
+    - If it's greater than the largest, it becomes the new largest, and the old largest becomes the second largest.
+    - If it’s in between largest and second largest, then it becomes the new second largest.
+
+"""
 def secondLargest(arr):
     
     # We 
@@ -21,12 +27,6 @@ def secondLargest(arr):
     # second_largest = -infinity
     
     
-    """
-    hen for each number:
-    - If it's greater than the largest, it becomes the new largest, and the old largest becomes the second largest.
-    - If it’s in between largest and second largest, then it becomes the new second largest.
-
-    """
     for num in arr:
         if num > largest:
             s_largest = largest
