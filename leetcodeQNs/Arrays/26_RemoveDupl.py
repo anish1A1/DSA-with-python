@@ -67,11 +67,14 @@ def removeDuplicate_with_InPlaceSorting(nums):
         # All the repeated array is added in the back of the list
     return insert_position, nums
 
+# Time Complexity(n)  and Space compleity 0(1)
+
 
 numbers = [0,0,1,1,1,2,2,3,3,4]
 print(f"In Place sorting of num array : {removeDuplicate_with_InPlaceSorting(numbers)}")
 
 print("\n")
+
 
 
 
@@ -93,7 +96,7 @@ class Solution(object):
             
         return len(result), result
 
-
+# Time Complexity(n)  and Space compleity 0(n)
 sol = Solution()
 nu = [0,0,1,1,1,2,2,3,3,4]
 abc = sol.removeDuplicates(nu)
