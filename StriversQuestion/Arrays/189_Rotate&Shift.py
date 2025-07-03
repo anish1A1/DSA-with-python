@@ -76,3 +76,52 @@ print(rotate_ShiftArray(arr, k))
         Then another to sort the array till k_th element--> [5,4,3,2,1] if k=2 then [5,4,1,2,3]
         Then another to sort the remaining array => [5,4,1,2,3]
 """
+
+
+
+"""
+
+Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3,4,5,6,7], k = 3
+Output: [4,5,6,7,1,2,3]
+Explanation:
+
+same as above but in right side
+
+Example 2:
+
+Input: nums = [-1,-100,3,99], k = 2
+Output: [3,99,-1,-100]
+Explanation: 
+rotate 1 steps to the right: [99,-1,-100,3]
+rotate 2 steps to the right: [3,99,-1,-100]
+ 
+"""
+def rotate_shit_in_right(arr, k):
+    n = len(arr)
+    k = k%n
+    
+    def swapper(start, end):
+        
+        while start < end:
+            arr[start], arr[end] = arr[end], arr[start]
+            start+=1
+            end -=1
+    
+    swapper(0, n-1)
+    swapper(n-k, n-1)
+    print(arr)
+    swapper(0, n-k-1)
+    print(arr)
+    
+    return arr
+    
+arr1 = [1,2,3,4,5,6,7]
+k = 2
+
+print(rotate_shit_in_right(arr1, k)) 
