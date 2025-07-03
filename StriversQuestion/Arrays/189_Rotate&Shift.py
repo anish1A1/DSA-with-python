@@ -81,7 +81,7 @@ print(rotate_ShiftArray(arr, k))
 
 """
 
-Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
+Given an integer array nums, rotate the array to the left by k steps, where k is non-negative.
 
  
 
@@ -102,26 +102,23 @@ rotate 1 steps to the right: [99,-1,-100,3]
 rotate 2 steps to the right: [3,99,-1,-100]
  
 """
-def rotate_shit_in_right(arr, k):
+def rotate_left(arr, k):
     n = len(arr)
-    k = k%n
-    
+    k = k % n
+
     def swapper(start, end):
-        
         while start < end:
             arr[start], arr[end] = arr[end], arr[start]
-            start+=1
-            end -=1
-    
-    swapper(0, n-1)
-    swapper(n-k, n-1)
-    print(arr)
-    swapper(0, n-k-1)
-    print(arr)
-    
+            start += 1
+            end -= 1
+
+    swapper(0, k - 1)       # Reverse first k elements
+    swapper(k, n - 1)       # Reverse last n - k elements
+    swapper(0, n - 1)       # Reverse entire array
+
     return arr
     
 arr1 = [1,2,3,4,5,6,7]
-k = 2
+k = 3
 
-print(rotate_shit_in_right(arr1, k)) 
+print(rotate_left(arr1, k)) 
