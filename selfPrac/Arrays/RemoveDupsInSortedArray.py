@@ -24,20 +24,7 @@ Constraints:
 1 <= nums.length <= 3 * 104
 -100 <= nums[i] <= 100
 nums is sorted in non-decreasing order.
-
-
 """
-
-
-
-# def RemDuplicate(nums):
-#     if len(nums) < 1:
-#         return nums
-    
-#     counter = nums[0]
-#     for i in range(1, len(nums)):
-        
-
 
 def RemoveDuplicate_notInPlace(nums):
     
@@ -59,3 +46,8 @@ def RemoveDuplicate_notInPlace(nums):
 
 print(f"Creating New Array Result: {RemoveDuplicate_notInPlace([1,1,2,2,3,3,4])}")
         
+        
+# TWo pointer Approach
+
+# def RemoveDuplicate_InPlace(nums):
+    
