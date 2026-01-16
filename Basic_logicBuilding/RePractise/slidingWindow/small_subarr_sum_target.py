@@ -25,3 +25,18 @@ def small_subarr_sum_gtr_eql_to_target(arr, target):
     return 0 if min_length == float("inf") else min_length
 print(small_subarr_sum_gtr_eql_to_target(arr = [2, 1, 5, 2, 3, 2], target = 7))
 
+
+def bruteforce_subarr(arr, target):
+    n = len(arr)
+    min_length = float("inf")
+    for i in range(n):
+        current_sum = 0
+        for j in range(i, n):
+            current_sum += arr[j]
+            
+            if current_sum >= target:
+                current_sum = j - i + 1
+                min_length = min(min_length, current_sum)
+                break
+    return 0 if min_length == float("inf") else min_length
+print(bruteforce_subarr(arr = [2, 1, 5, 2, 3, 2], target = 7))    
