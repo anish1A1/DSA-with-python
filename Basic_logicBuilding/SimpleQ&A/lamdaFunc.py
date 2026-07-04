@@ -23,7 +23,7 @@ print(sorted_data)
 
 """
 2. Using .sort() with lambda:
-The .sort() method sorts a list in-place, modifying the original list. Similar to sorted(), it also accepts a key parameter for custom sorting.
+The .sort() method sorts a list in-place, modifying the original list. Similar to sorted() {but sorted creates a copy of sorted elements not changing original elements}, it also accepts a key parameter for custom sorting.
 
 """
 
