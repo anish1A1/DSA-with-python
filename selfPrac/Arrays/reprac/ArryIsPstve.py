@@ -3,6 +3,7 @@ Check if all elements in array are positive
 
 """
 
+
 def CheckPositive(nums): 
     
     for i in nums:
@@ -12,3 +13,8 @@ def CheckPositive(nums):
     return "The array contains positive element"
 
 print("\n",CheckPositive([2,-1,5,6]))
+
+# This function gives 0(n) time and 0(1) space
+
+            
+        

@@ -4,16 +4,15 @@ Check if all elements in array are positive
 """
 
 
-def checkPos(arr, n):
-    if n == 0 or n == 1:
-        return True
-    
-    if arr[n-1] < 0:   #python index start from zero, and we used length as n value. but the total numbers of arr for [-1,4,56,4]  is 4 as list start from 0.
-        #So we use n-1  (imp) otherwise index out of bound error.
-        return False
-    
-    return checkPos(arr, n-1)
 
+def CheckPositive(nums): 
+    
+    for i in nums:
+        if i < 0:
+            return "The array's elements contains negative"
+        
+    return "The array contains positive element"
 
-arr = [-1,4,56,4]
-print(f"It has negative num. : {checkPos(arr, len(arr))}")
+print("\n",CheckPositive([2,-1,5,6]))
+
+# This function gives 0(n) time and 0(1) space
