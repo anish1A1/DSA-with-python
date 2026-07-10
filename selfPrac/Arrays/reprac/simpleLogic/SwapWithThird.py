@@ -8,3 +8,11 @@ def swap(a, b):
 
 swap(2,6)
 
+
+def SwapWithOutThirdVar(a, b):
+    
+    
+    a,b = b, a
+    print(a, b)
+
+SwapWithOutThirdVar(7, 6)
