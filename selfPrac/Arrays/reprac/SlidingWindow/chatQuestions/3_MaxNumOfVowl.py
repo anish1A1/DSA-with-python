@@ -31,3 +31,28 @@ s consists of lowercase English letters.
 
 1 ≤ k ≤ s.length
 """
+
+from collections import defaultdict
+
+def max_num_of_vowel_ink(s, k):
+    vowels = 'aeiou'
+    count = 0
+    
+    for i in range(k):
+        if s[i] in vowels:
+            count += 1
+    max_count = count
+        
+    for i in range(k, len(s)):
+        if s[i] in vowels:
+            count += 1
+        
+        # before counting the new index and max count, first remove the previous index  and make the window of size k
+        
+        if s[i-k] in vowels:
+            count -= 1
+        max_count = max(max_count, count)   
+    
+    return max_count 
+
+print(max_num_of_vowel_ink(s = "leeetcode", k = 3))
