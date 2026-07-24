@@ -32,7 +32,6 @@ Constraints:
 
 def avg_subarray_k(nums, k):
     
-    left =0
     avg_values = []
     window_sum = 0
     
@@ -55,8 +54,26 @@ def avg_subarray_k(nums, k):
     return avg_values
 
 
-print(avg_subarray_k([1, 3, 2, 6, -1, 4, 1, 8, 2], 5))  # [2.2, 2.8, 2.4, 3.6, 2.8]
+print(avg_subarray_k([1, 3, 2, 6, -1, 4, 1, 8, 2], 5))  
 print(avg_subarray_k([5, 10, 15], 2))       
 
 
 # Short way to do it
+
+def avg_subarray_k_short(nums, k):
+    
+    avg_list = []
+    
+    window_sum = sum(nums[:k])
+    
+    avg_list.append(round((window_sum / k), 2))
+    
+    for i in range(k, len(nums)):
+        window_sum += nums[i] - nums[i-k]
+        avg_list.append(round((window_sum / k), 2))
+    
+    return avg_list
+
+print('\n')
+print(avg_subarray_k_short([1, 3, 2, 6, -1, 4, 1, 8, 2], 5))  
+print(avg_subarray_k_short([5, 10, 15], 2))  
