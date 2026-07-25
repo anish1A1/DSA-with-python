@@ -18,6 +18,7 @@ def KDistinctCharacter(nums, k):
     for right in range(len(nums)):
         char_count[nums[right]] +=1
         
+        
         while len(char_count) > k:
             char_count[nums[left]] -= 1
             if char_count[nums[left]] == 0:
@@ -31,7 +32,7 @@ k = 2
 print(KDistinctCharacter('araaci',k))
     
 
-# Using set to find K distinct character Longest Substring
+# Using set to find K distinct character Longest Substring with set
 
 def KDistinctCharacter_set(nums, k):
     
