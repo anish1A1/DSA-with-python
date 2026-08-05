@@ -76,4 +76,6 @@ print("Array after removing duplicates:", nums[:k])
 
 # Space => 0(n), Time => 0(n)
 
- 
+nums = [1,2,3,6,7,8]
+k=3
+k = nums[k:]
