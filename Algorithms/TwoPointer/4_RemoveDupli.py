@@ -33,25 +33,9 @@ def rem_duplicates(nums):
     
 print(rem_duplicates([0,0,0,1,1,1,2,2,3,3,4]))
  
+# Time => 0(n), space => 0(1)
 
 
-def brut_remv_dupli(nums):
-    counter = 0
-    add_dash = "_"
-    n = (len(nums))
-    for i in range(n):
-        for j in range(i+1, n-1):
-            if nums[i] == nums[j]:
-                counter += 1
-                nums.remove(nums[j])
-    
-    while counter > 0:
-        nums.append(add_dash)
-        counter -= 1
-        
-    return nums
-
-print(brut_remv_dupli([1,1,2,2]))
 
 # Solution class containing removeDuplicates method
 class Solution:
@@ -90,6 +74,6 @@ print("k =", k)
 print("Array after removing duplicates:", nums[:k])
 
 
-
+# Space => 0(n), Time => 0(n)
 
  
