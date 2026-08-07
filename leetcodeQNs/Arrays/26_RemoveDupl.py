@@ -59,6 +59,7 @@ def removeDuplicate_with_InPlaceSorting(nums):
     for i in range(1, len(nums)):
         if nums[i ] != nums[i -1]:
             nums[insert_position] = nums[i]
+            print(nums[insert_position], i)
             insert_position += 1
         
         # Inplace sorting the num array
@@ -70,12 +71,41 @@ def removeDuplicate_with_InPlaceSorting(nums):
 # Time Complexity(n)  and Space compleity 0(1)
 
 
-numbers = [0,0,1,1,1,2,2,3,3,4]
+numbers = [0,1,1,1,2,2,3,3,4]
 print(f"In Place sorting of num array : {removeDuplicate_with_InPlaceSorting(numbers)}")
 
 print("\n")
 
 
+"""
+ Step‑by‑Step Trace
+Initial array: [0,1,1,1,2,2,3,3,4]  
+insert_position = 1
+
+i = 1  
+Compare nums[1] = 1 with nums[0] = 0. They are different.
+→ Place nums[1] at insert_position = 1.
+→ Array stays [0,1,1,1,2,2,3,3,4].
+→ Print: 1 1.
+→ insert_position = 2.
+
+i = 2  
+Compare nums[2] = 1 with nums[1] = 1. They are equal.
+→ Do nothing.
+
+i = 3  
+Compare nums[3] = 1 with nums[2] = 1. Equal.
+→ Do nothing.
+
+i = 4  
+Compare nums[4] = 2 with nums[3] = 1. Different.
+→ Place nums[4] at insert_position = 2.
+→ Array becomes [0,1,2,1,2,2,3,3,4].
+→ Print: 2 4.
+→ insert_position = 3.
+
+…and so on.
+"""
 
 
 
