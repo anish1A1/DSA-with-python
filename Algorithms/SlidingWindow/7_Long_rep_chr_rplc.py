@@ -39,6 +39,7 @@ def characterReplacement(s, k):
     for right in range(len(s)):
         char_count_dict[s[right]] += 1
         max_freq = max(max_freq, char_count_dict[s[right]])
+        # get the max frequency of most added character. (greater count)
         
         while (right - left + 1) - max_freq > k:
             char_count_dict[s[left]] -= 1
@@ -48,4 +49,19 @@ def characterReplacement(s, k):
     return max_len
 
 print(characterReplacement(s = "ABAB", k = 2))
+
+
+    # After that we will compare the max_freq of that char - the current sliding window length is greater than k (replacebale character count).
+
+    # If its greater than k it means that,
+    # dict = {A:3, B:2} (current),  and k = 2 
+    # for now the value of max_freq = 3  (since 3 A's)
+
+    # Now when go to next element, if the next element is again B, then    
+    # dict = {A:3, B:3} (current); 
+    # now cuurent length = 6, and max_freq = 3,
+    # so  6- 3 = 3  i.e.  3 > k(2), we remove the first index value i.e. left, then it will be
+    # dict = {A:2, B:3}  
+    # since not more than 2 count of different should be greater than k(2).
+    
     
