@@ -106,6 +106,32 @@ If nums2 still has leftover elements, copy them into nums1.
 (No need to copy leftovers from nums1 — they’re already in place.)
 
 
+Example Walkthrough
+Input:
+nums1 = [1,2,3,0,0,0], m = 3  
+nums2 = [2,5,6], n = 3
+
+Steps:
+
+Compare 3 vs 6 → place 6 at end.
+
+Compare 3 vs 5 → place 5.
+
+Compare 3 vs 2 → place 3.
+
+Compare 2 vs 2 → place 2.
+
+Copy remaining 2.
+
+Output: [1,2,2,3,5,6]
+
+Complexity
+Time: O(m + n)
+
+Space: O(1) (in‑place)
+
+✅ Summary: You solved it by realizing the trick is to merge backwards using three pointers (i, j, k). This avoids overwriting and ensures the merge is done in‑place.
+
 
 This is a classic two pointer approach where me use merger like merge sort. There are 0's in nums1 and we need to return num1 array too so, we need to modify the num1 list. 
 
