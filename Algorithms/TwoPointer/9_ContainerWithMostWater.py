@@ -70,5 +70,54 @@ def maxAreaBrute(height: List[int]):
 print(maxAreaBrute([1,8,6,2,5,4,8,3,7]))
 
 """
+Solution Approach (Two Pointers)
+Intuition
+The area between two lines is determined by:
 
+Area
+=
+min
+⁡
+(
+height[left]
+,
+height[right]
+)
+×
+(
+𝑟
+𝑖
+𝑔
+ℎ
+𝑡
+−
+𝑙
+𝑒
+𝑓
+𝑡
+)
+To maximize area, we want:
+A large width (right - left)
+Tall heights (min(height[left], height[right]))
+
+Strategy
+Start with two pointers:
+
+left = 0 (first line)
+right = len(height) - 1 (last line)
+
+Compute the area between them.
+Move the pointer with the smaller height inward:
+
+Because the limiting factor is the shorter line.
+Moving the taller line inward won’t help (width decreases, height still limited).
+Keep track of the maximum area seen.
+Continue until left < right.
+
+
+Area = width * minimum height of any one index. You will need bigger width to fill most water. Because the water can spill down you need the wall to be biggest.  The water can be most water only if the minimum height of any two pointer element times the width they cover in those pointer. 
+
+We know that taking two pointer will be the best approach. We will start left from 0 and right from len(arr) - 1. We initialize an area = 0. Here we will store the area from the two pointers. The formula is width * height of  small wall of any element. after that we will use max_array object that will lookup for maximum value of area arr. To increase and decrease pointers we go with their wall height if left has small than change that pointer in this way we can solve this problem. The width of these pointer will be, right - left.
+
+No, matter how big an element be inside two pointer, if its friend/pointer is small we will go with the small height because the water can only be filled uptill the smallest height practically.  Instead of L * B we should use width * min height of any one element.  The water can cover only till the height of the wall. and the width will be, right - left.
 """
