@@ -38,6 +38,46 @@ Constraints:
 """
 
 
+def sum3_optimal(nums):
+    result = []
+    nums.sort()
+    
+    for index, element in enumerate(nums):
+        # check if second ongoing index is equal to previous ones. if yes skip it. 
+        if index > 0 and nums[index - 1] == element:
+            continue
+        
+        left = index + 1
+        right = len(nums) - 1
+        
+        while left < right:
+            total_sum = nums[left] + nums[right] + element
+            
+            if total_sum > 0:
+                right -= 1
+            elif total_sum < 0:
+                left += 1
+            else:
+                result.append([element, nums[left], nums[right]]) 
+                left += 1    #we always increase a pointer in each loop
+                while left < right and nums[left] == nums[left - 1]:
+                    left += 1
+    return result
+print("Optimal Solution")
+print(sum3_optimal(nums = [-1,0,1,2,-1,-4]))
+print(sum3_optimal(nums = [0,1,1]))
+print(sum3_optimal(nums = [0,0,0]))
+
+"""
+while left < right and nums[left] == nums[left - 1]:
+    left += 1
+This loop skips duplicates:
+
+After finding a valid triplet, if the next nums[left] is the same as the previous one, you’d get the same triplet again.
+So you keep moving left forward until you hit a new value.
+This ensures that each triplet in result is unique.
+"""
+
 def sum3_average(nums):
 
     result = set()
