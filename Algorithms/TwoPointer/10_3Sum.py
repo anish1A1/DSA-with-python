@@ -38,6 +38,31 @@ Constraints:
 """
 
 
+def sum3_average(nums):
+
+    result = set()
+    nums.sort()
+    for i in range(len(nums)):
+        left = i + 1
+        right= len(nums) - 1
+        
+        while left < right:
+            if nums[i]+nums[left] + nums[right] == 0:
+                triplets = tuple(sorted([nums[i], nums[left], nums[right]]))
+                result.add(triplets)
+            if nums[i]+nums[left] + nums[right] > 0:
+                right -= 1
+            else:
+                left +=1  
+    return [list(triplets) for triplets in result]
+# We will take two pointers inside a loop
+# Space 0(n²) Time O(n²) space (due to storing results)
+
+print("Average Solution")
+print(sum3_average(nums = [-1,0,1,2,-1,-4]))
+print(sum3_average(nums = [0,1,1]))
+print(sum3_average(nums = [0,0,0]))
+
 
 
 def Sum3_Brute(nums):
@@ -62,9 +87,9 @@ def Sum3_Brute(nums):
     return [list(triplets) for triplets in result]
 # Time 0(n3), Space 0(n3)
 # This a list comprehension that converts each triplet (which is stored as a tuple inside the set) back into a list.
-
+print("Brute force Solution")
 print(Sum3_Brute(nums = [-1,0,1,2,-1,-4]))
-print("\n", Sum3_Brute(nums = [0,1,1]))
+print( Sum3_Brute(nums = [0,1,1]))
 print(Sum3_Brute(nums = [0,0,0]))
     
 """
