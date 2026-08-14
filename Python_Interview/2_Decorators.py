@@ -92,3 +92,58 @@ print('\n')
 print(multiple_number(2,2,3,5,70,3,1,90,923))
 # *args catches extra positional arguments as a tuple
 # **kwargs catches extra keyword arguments as a dictionary
+
+
+"""
+Using class Decorators.
+Class decorators in Python work similarly to function decorators, but instead of taking a function as an argument, they take a class. A class decorator can modify or enhance a class by adding new methods, managing its state, or changing how it is initialized.
+
+There are two types of class-level decorations:
+1. Using a Function as a Class Decorator
+2. Using a Class as a Decorator
+"""
+
+def add_farewell(cls):
+    def farewell(self):
+        return f"GoodBye from {self.name}"
+    
+    # Dynamically add the method to the class
+    cls.farewell = farewell
+    return cls
+
+@add_farewell
+class Person:
+    def __init__(self, name):
+        self.name = name
+    
+    def greet(self):
+        return f"Hello, I am {self.name}"
+    
+p = Person("Alice")
+print(p.greet())      # Output: Goodbye from Alice
+print(p.farewell())   # Output: Goodbye from Alice
+
+
+"""
+2. Using a Class as a DecoratorA class can act as a decorator for functions if it implements two specific dunder methods:
+__init__: Runs once when the decorator is applied to store the wrapped function.
+
+__call__: Runs every time the decorated function is invoked
+"""
+
+class CallCounter:
+    def __init__(self, func):
+        self.func = func
+        self.count = 0    #Persistant data
+    
+    def __call__(self, *args, **kwargs):
+        self.count +=1
+        print(f"Call {self.count} to {self.func.__name__}")
+        return self.func(*args, **kwargs)
+
+@CallCounter
+def say_hi():
+    print("Hi")
+print('\n')   
+say_hi() # Output: Call 1 to say_hi ... Hi!
+say_hi() # Output: Call 2 to say_hi ... Hi!
