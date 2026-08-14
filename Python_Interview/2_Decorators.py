@@ -22,5 +22,26 @@ def splitter_decorator(func):
 def hello():
     return "Hello World"
 
-hel = hello()
-print(hel)
+print(hello())
+
+
+# With arguments
+
+def names_decorator(func):
+    def wrapper(arg1, arg2):
+        arg1 = arg1.capitalize()
+        arg2 = arg2.capitalize()
+        string_capitalize = func(arg1, arg2)    
+        
+        return string_capitalize
+    return wrapper
+
+@names_decorator
+def say_hello(name1, name2):
+    return "Hello " + name1 + "!, Hello " + name2 
+
+retun_hello = say_hello('Sara', "Ansh")
+print(retun_hello)
+
+
+# With 
