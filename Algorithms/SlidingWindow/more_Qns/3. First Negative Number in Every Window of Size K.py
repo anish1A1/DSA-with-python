@@ -36,4 +36,6 @@ def FindNegInWindow(nums, k):
             left += 1
     return result
     
+print(FindNegInWindow([-8, 2, 3, -6, 10], k = 2))
+print('\n')
 print(FindNegInWindow([-8, 2, 3, -6, 10], k = 3))
