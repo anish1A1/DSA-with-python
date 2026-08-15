@@ -38,3 +38,19 @@ list4[0][0] = 99
 
 print(f"List 3 is {list3}")
 print(f"List 4 is {list4}")
+
+
+# Now to copy the nested object we use deepcopy.
+
+list6 = [[1,2], [3,4]]
+list7 = copy.deepcopy(list6)
+
+list7[0][0] = 99
+
+print(f"List 6 is {list6}")
+print(f"List 7 is {list7}")
+
+# The deep copy copied the whole array of list6 
+# Deep copy uses recursion to recursively copy all element
+# Result : Independent array
+# But using recursion also makes deepcopy slow and also uses more memory
