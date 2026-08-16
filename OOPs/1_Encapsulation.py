@@ -68,3 +68,27 @@ print(calc.result)
 
 calc.add('s')
 print(calc.result)
+
+
+# We can also do encapsulation without @property decorator
+
+# Method 1: Traditional Getter and Setter Methods (Java Style)You write explicit, separate methods to get and set the value. You must call these methods using parentheses ().pythonclass Wallet:
+
+class Wallet:
+    def __init__(self, balance):
+        self.__balance = balance  # Private variable
+
+    # Explicit Getter method
+    def get_balance(self):
+        return self.__balance
+
+    # Explicit Setter method
+    def set_balance(self, amount):
+        if amount < 0:
+            raise ValueError("Balance cannot be negative!")
+        self.__balance = amount
+
+# Usage
+obj = Wallet(100)
+obj.set_balance(150)         # Must call as a function cannot call __balance as done with @property
+print(obj.get_balance())     # Output: 150
