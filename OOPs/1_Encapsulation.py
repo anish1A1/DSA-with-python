@@ -92,3 +92,4 @@ class Wallet:
 obj = Wallet(100)
 obj.set_balance(150)         # Must call as a function cannot call __balance as done with @property
 print(obj.get_balance())     # Output: 150
+# print(obj.__balance) #Error
