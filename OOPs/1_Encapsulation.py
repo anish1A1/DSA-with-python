@@ -38,3 +38,33 @@ print(account.balance)
 # To get it, get it from a method.
 print(account.get_age())
 
+
+
+class Calculator():
+    def __init__(self):
+        self.result = 0
+    
+    def __validate(self, nums):
+        if not isinstance(nums, (int, float)):
+            # isInstance will check the object's value if it is int/float or not.
+            return False
+        return True
+    
+    def add(self, num):
+        if self.__validate(num):
+            self.result += num
+        else:
+            print("Invalid Number. Retry!")
+    
+calc = Calculator()
+calc.add(5)
+
+print(calc.result)
+calc.add(15)
+print(calc.result)
+
+# When accessing private method will give an error
+# print(calc.__validate)
+
+calc.add('s')
+print(calc.result)
