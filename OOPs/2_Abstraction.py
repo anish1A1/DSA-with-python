@@ -29,22 +29,29 @@ An Interface is a purely structural contract. Unlike some languages (like Java o
 """
 
 
+from abc import ABC, abstractmethod
 
 class DBConnection(ABC):
+    @property
     @abstractmethod
-    def connect(self):  # Must be overridden by subclasses
+    def connect(self):
+        # Must be overridden by subclasses
         pass
-
-    def log_status(self):  # Concrete method; shared by all subclasses
+        
+    def log_status(self):
+        # Concrete method; shared by all subclasses
         return "Connection log initiated."
 
 class Django(DBConnection):
     def __init__(self):
         super().__init__()
         
+    @property
     def connect(self):
-        return "Django is trying to connect"
+        return "Django is trying to connect" 
+    # Now you can access this method as any normal attribute.
     
+
 django = Django()
-print(django.connect())
+print(django.connect)
 print(django.log_status())
