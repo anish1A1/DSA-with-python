@@ -1,6 +1,45 @@
 
 
 
+
+
+
+
+
+def bubble_Sort(arr):
+    n = len(arr)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n-i-1):
+            
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+        if not swapped:
+                break
+    return arr
+print(bubble_Sort([9,16,6,26,0]))
+
+# also we can use 
+def buuble_sort(arr):
+    n= len(arr)
+    for i in range(n-1):
+        swapped = False
+        for j in range(n-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+            print("Array being Sorted: ",arr, "with index", i )
+            
+        if not swapped:
+            break
+    return arr
+print(buuble_sort([9,16,6,26,0]))
+
+
+
+
+
 def BubbleSorting(nums):
     n = len(nums)
     for i in range(n - 1):
@@ -14,17 +53,17 @@ nums =[9,16,6,26,0]
 print(BubbleSorting(nums))
 print("\n")
 
-def BubbleSortingReverse(nums):
-    n = len(nums)
-    for i in range(n-1, 0, -1):
-        for j in range(n-1):
-            if nums[j+1] < nums[j]:
-                nums[j], nums[j+1] = nums[j+1], nums[j]
-            print("Array being Sorted: ",nums, "with index", i )
-    return "Array after Reverse Bubble Sort:",nums
+# def BubbleSortingReverse(nums):
+#     n = len(nums)
+#     for i in range(n-1, 0, -1):
+#         for j in range(n-1):
+#             if nums[j+1] < nums[j]:
+#                 nums[j], nums[j+1] = nums[j+1], nums[j]
+#             print("Array being Sorted: ",nums, "with index", i )
+#     return "Array after Reverse Bubble Sort:",nums
 
-nums =[9,16,6,26,0]     
-print(BubbleSortingReverse(nums))
+# nums =[9,16,6,26,0]     
+# print(BubbleSortingReverse(nums))
 
 
 def UserInputBubbleSort():
