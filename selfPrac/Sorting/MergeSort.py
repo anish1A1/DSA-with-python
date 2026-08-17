@@ -64,6 +64,7 @@ def arr_merge(left_half, right_half):
     result.extend(left_half[i:])
     result.extend(right_half[j:])
     
+    print("After extending left and right: ", result)
     return result
 
 print(merge([54,26,93,17,77,2,31,44,55]))
