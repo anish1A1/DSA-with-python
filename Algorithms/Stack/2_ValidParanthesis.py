@@ -66,6 +66,36 @@ s1 ="()[]{}"
 
 print(check_paranthesis(s =s))
 print(check_paranthesis(s =s1))
+print('\n')
+
+
+def check_paranthesis_again(s: str):
+    stack = []
+    
+   
+    pairs =  {
+            ')':'(',
+            '}' : '{',
+            ']': '['
+            }
+
+    for char in s:
+        if char in pairs:
+            if not stack or stack[-1] != pairs[char]:
+                return False
+            stack.pop()
+        else:
+            stack.append(char)
+    
+    return len(stack) == 0
+
+s = "([)]"
+s1 ="()[]{}"
+
+print(check_paranthesis_again(s =s))
+print(check_paranthesis_again(s =s1))
+
+
 
 """
 We are using a stack (Last in First out)
