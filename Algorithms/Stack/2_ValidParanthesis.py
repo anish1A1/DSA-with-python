@@ -63,6 +63,7 @@ def check_paranthesis(s: str):
 
 s = "([)]"
 s1 ="()[]{}"
+# Always add the closing bracket and check the closing bracket has its opening bracket from dict.
 
 print(check_paranthesis(s =s))
 print(check_paranthesis(s =s1))
