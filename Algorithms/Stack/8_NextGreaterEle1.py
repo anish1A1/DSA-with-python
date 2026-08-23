@@ -45,9 +45,30 @@ Follow up: Could you find an O(nums1.length + nums2.length) solution?
 from typing import List
 
 
+def nextGreaterElement( nums1: List[int], nums2: List[int]) -> List[int]:
+    ans = [-1] * len(nums1)
+    stack = []
+    index1 = {val:idx for idx, val in enumerate(nums1)}
+    
+    for i in range(len(nums2)):
+        
+        current = nums2[i]   #the current value of nums2
+        while stack and current > stack[-1]:
+            prev_val = stack.pop()
+            indx = index1[prev_val]  
+            #getting the index of popped value from dict.
+            
+            ans[indx] = current
+            # Adding the value in the result -- ans.
+        
+        if current in index1:
+            stack.append(current) 
+        
+    return ans
 
-
-
+print(nextGreaterElement([4,1,2], [1,3,4,2]))  # [-1, 3, -1]
+print(nextGreaterElement([2,4], [1,2,3,4]))    # [3, -1]
+print('\n')
 
 
 
