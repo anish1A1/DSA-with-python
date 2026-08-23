@@ -71,7 +71,6 @@ from typing import List
 
 def calPoints( operations: List[str]) -> int:
     stack = []
-    tot_sum = 0
         
     for i in range(len(operations)):
         if operations[i] == 'C':
@@ -86,7 +85,7 @@ def calPoints( operations: List[str]) -> int:
             stack.append(new_double_score)
             
         else:
-            # When it is 'C'
+            # When it is 'int'
             stack.append(int(operations[i]))
     return sum(stack)
 
