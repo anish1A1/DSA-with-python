@@ -59,3 +59,16 @@ def nextGreaterElements(nums: List[int]) -> List[int]:
 print(nextGreaterElements([1,2,1]))       # [2, -1, 2]
 print(nextGreaterElements([5,4,3,2,1]))   # [-1, 5, 5, 5, 5]
 print(nextGreaterElements([2,1,2,4,3]))   # [4, 2, 4, -1, 4]
+
+
+# Creating a circular array
+
+print('Creating a circular array')
+
+players = ["Alice", "Bob", "Charlie"]
+total_players = len(players)
+
+for i in range(2*total_players):
+    current_player = players[i % total_players]
+    
+    print(f"Turn {i} : {current_player}")
