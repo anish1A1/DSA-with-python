@@ -54,3 +54,11 @@ def dailyTemperature(temperature):
         stack.append(i)
     return answer
 
+
+# Example tests
+print(dailyTemperature([73,74,75,71,69,72,76,73]))  
+# Output: [1,1,4,2,1,1,0,0]
+print(dailyTemperature([30,40,50,60]))  
+# Output: [1,1,1,0]
+print(dailyTemperature([30,60,90]))  
+# Output: [1,1,0]
