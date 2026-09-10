@@ -61,6 +61,7 @@ class LinkedList:
         temp.next = new_node
         print(f"Added {data} in Linked List")
     
+    # Reverse function
     def reverse(self):
         if self.head is None:
             print('Insert First to Reverse')
@@ -100,3 +101,4 @@ class_head.reverse()
 display(head)
 
 
+# completed 
