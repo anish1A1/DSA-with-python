@@ -24,7 +24,7 @@ def FindMaxAverage(nums, k):
         current_sum += nums[i]
     
     # We are only looping the first kth element to get average
-    
+    print(current_sum)
     max_average = current_sum / float(k)
     # print(max_average)
     
@@ -43,21 +43,21 @@ print(FindMaxAverage([1,12,-5,-6,50,3], 4))
 
 
 
-# def findmaxAverage(nums, k):
-#     current_sum = sum(nums[:k])
-#     # Will get all the value till the kth element and sums it up
-#     max_sum = current_sum
+def findmaxAverage(nums, k):
+    current_sum = sum(nums[:k])
+    # Will get all the value till the kth element and sums it up
+    max_sum = current_sum
 
-#     # Creating a loop for the leftover elements
-#     for i in range(k, len(nums)):
-#         current_sum += nums[i] - nums[i-k]
-#         # Here we are adding the new element that is comming and also substracting the previous element. 
-#         max_sum = max(max_sum, current_sum)
-#         average = max_sum / k
-#     return average
+    # Creating a loop for the leftover elements
+    for i in range(k, len(nums)):
+        current_sum += nums[i] - nums[i-k]
+        # Here we are adding the new element that is comming and also substracting the previous element. 
+        max_sum = max(max_sum, current_sum)
+        average = max_sum / k
+    return average
 
 
-# print(findmaxAverage([1,2,3,4,5,6], 3))
+print(findmaxAverage([1,2,3,4,5,6], 3))
 
 
     
