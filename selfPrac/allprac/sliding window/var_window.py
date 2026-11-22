@@ -86,3 +86,27 @@ def char_replacement(s, k):
     return max_len
 
 print(char_replacement(s = "ABABBA", k = 2))
+print(char_replacement("abcddefg" , k = 3))      
+    
+
+
+# Longest Substring With At Most K Distinct Characters
+
+def at_most_k_distinct(s, k):
+    seen = defaultdict(int)
+    left = 0
+    max_length = 0
+    cur_length = 0
+    for right in range(len(s)):
+        seen[s[right]] += 1
+        
+        while len(seen) > k:
+            seen[s[left]] -= 1
+            if seen[s[left]] == 0:
+                del seen[s[left]]
+            left +=1
+            
+        cur_length = right- left + 1
+        max_length = max(cur_length, max_length)
+    return max_length
+print(at_most_k_distinct("abcddefg" , k = 3))
