@@ -42,4 +42,47 @@ def long_substr(s, k):
     return max_length
 
 print(long_substr(s="abcddefg" , k = 3))
+print('\n')
+
+# longest repeating character replacement
+
+from collections import Counter
+def char_rep(s, k):
+    char_count_dict = defaultdict(int)
+    max_length = 0
+    left =0
+    max_freq = 0
+    
+    for right in range(len(s)):
+        char_count_dict[s[right]] += 1
+        max_freq = max(max_freq, char_count_dict[s[right]])
+        # will get the frequenc y of each
         
+        while (right - left + 1) - max_freq > k:
+            char_count_dict[s[left]] -= 1
+            left += 1
+        max_length = max(max_length, right - left  + 1)
+    return max_length
+
+print(char_rep(s = "ABAB", k = 2))
+
+# retrying longest repeating character replacement
+
+def char_replacement(s, k):
+    char_count = defaultdict(int)
+    max_freq = 0
+    max_len = 0
+    left = 0
+    
+    for right in range(len(s)):
+        char_count[s[right]] += 1
+        max_freq = max(max_freq, char_count[s[right]])
+        
+        while (right - left + 1) - max_freq > k:
+            char_count[s[left]] -=1
+            left += 1
+        
+        max_len = max(right- left + 1, max_len)
+    return max_len
+
+print(char_replacement(s = "ABABBA", k = 2))
