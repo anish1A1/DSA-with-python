@@ -72,3 +72,16 @@ def removeDupli(nums):
     return nums[:left]
 print(removeDupli([1,1,2]))
 print(removeDupli([0,0,0,1,1,1,2,2,3,3,4]))
+
+def move_zero(nums):
+    left = 0
+    for right in range(len(nums)):
+        if nums[right] != 0:
+            nums[left] = nums[right]
+            left += 1
+    
+    for i in range(left, len(nums)):
+        nums[i] = 0
+    return nums
+
+print(move_zero([0,1,0,3,12]))
