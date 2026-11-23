@@ -45,3 +45,30 @@ def revString(s):
         right -=1 
     return s
 print(revString(["h","e","l","l","o"]))
+
+def rem_dup(nums):
+    if not nums:
+        return 0
+    left = 1
+    
+    for right in range(1, len(nums)):
+        if nums[right] != nums[right - 1]:
+            nums[left] = nums[right]
+            left +=1 
+    return nums[:left]
+print(rem_dup([1,1,2]))
+print(rem_dup([0,0,0,1,1,1,2,2,3,3,4]))
+
+
+# again 
+
+def removeDupli(nums):
+    left = 1
+    
+    for right in range(1, len(nums)):
+        if nums[right] != nums[right - 1]:
+            nums[left] = nums[right]
+            left += 1
+    return nums[:left]
+print(removeDupli([1,1,2]))
+print(removeDupli([0,0,0,1,1,1,2,2,3,3,4]))
