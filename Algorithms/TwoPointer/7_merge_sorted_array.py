@@ -75,7 +75,7 @@ print(merge_srted_arr( nums1 = [1,2,3,0,0,0], m= 3, nums2 = [2,5,6], n= 3))
 Problem Recap
 You are given two sorted arrays:
 
-nums1 of length m + n (first m elements valid, last n are placeholders 0).
+nums1 of length m + n (first m elements valid, last n are placeholders 0).                                      
 nums2 of length n.
 Merge nums2 into nums1 in non‑decreasing order.
 Do it in‑place (no extra array).

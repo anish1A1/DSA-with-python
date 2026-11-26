@@ -99,3 +99,82 @@ def removeVal(nums, val):
     return left 
 print(removeVal(nums = [3,2,2,3,2, 2, 3], val = 3))
             
+
+
+def merge_arrays(nums1, m, num2, n):
+    left = 0
+    right = (m + n) - 1
+    i = m - 1
+    j = n - 1
+    k = m + n - 1 
+    
+    while i>= 0 and j>= 0:
+        if nums1[i] > num2[j]:
+            nums1[k] = nums1[i]
+            i -= 1
+        else: 
+            nums1[k] = num2[j]
+            j-= 1
+        k -= 1
+        
+    while j >= 0:
+        nums1[k] = num2[j]
+        k -= 1
+        j -= 1
+    return nums1
+
+print(merge_arrays( nums1 = [1,2,3,0,0,0], m= 3, num2 = [2,5,6], n= 3))
+
+
+# retrying the sorting array while merging from another array.
+
+def re_merge_array(nums1, m, nums2, n):
+    i = m -1
+    j = n - 1
+    total_length = m + n -1
+    
+    while i >=0 and j >= 0:
+        if nums1[i] > nums2[j]:
+            nums1[total_length] = nums1[i]
+            i -= 1
+        else:
+            nums1[total_length] = nums2[j]
+            j -= 1
+        total_length -= 1
+    while j>=0 :
+        nums1[total_length] = nums2[j]
+        j -= 1
+        total_length -= 1
+    return nums1
+
+print(re_merge_array( nums1 = [1,2,3,0,0,0, 0], m= 3, nums2 = [1, 2,5,6], n= 4))
+
+# Dutch national flag
+
+def dutchNational(nums):
+    length = len(nums)
+    start = 0
+    end = length - 1
+    middle_pointer = 0
+    
+    while middle_pointer <= end:
+        if nums[middle_pointer] == 0:
+            nums[start], nums[middle_pointer] = nums[middle_pointer], nums[start]
+            
+            start += 1
+            middle_pointer += 1
+        
+        elif nums[middle_pointer] == 2:
+            nums[end], nums[middle_pointer] = nums[middle_pointer], nums[end]
+            
+            end -= 1
+            middle_pointer += 1
+        
+        else:
+            middle_pointer += 1
+    
+    return nums
+
+print(dutchNational(nums = [2,0,2,1,1,0]))
+print(dutchNational(nums = [2,0,1]))
+
