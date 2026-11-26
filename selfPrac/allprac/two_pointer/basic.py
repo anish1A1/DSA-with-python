@@ -178,3 +178,27 @@ def dutchNational(nums):
 print(dutchNational(nums = [2,0,2,1,1,0]))
 print(dutchNational(nums = [2,0,1]))
 
+
+# repratice again of this 0, 1,2 
+
+def checkFlagColour(nums):
+    start = 0
+    end = len(nums) - 1
+    middle= 0
+    
+    while middle <= end:
+        if nums[middle] == 0:
+            nums[start], nums[middle] = nums[middle], nums[start]
+            start += 1
+            middle += 1
+        elif nums[middle] == 2:
+            nums[end], nums[middle] = nums[middle], nums[end]
+            end -= 1
+            middle += 1
+        else:
+            middle += 1
+    return nums
+
+print(checkFlagColour(nums = [2,0,2,1,1,0]))
+print(checkFlagColour(nums = [2,0,1]))
+            
