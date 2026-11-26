@@ -35,6 +35,7 @@ def palindromeCheck(s):
 print(palindromeCheck("A man, a plan, a canal: Panama"))
 print(palindromeCheck("race a car"))
 
+#Reverse String
 def revString(s):
     left = 0
     right = len(s) - 1
@@ -85,3 +86,16 @@ def move_zero(nums):
     return nums
 
 print(move_zero([0,1,0,3,12]))
+
+# Remove all instance of val in place and return the new length
+
+def removeVal(nums, val):
+    left = 0
+    for right in range(len(nums)):
+        if nums[right] != val:
+            nums[left] = nums[right]
+            left += 1
+        
+    return left 
+print(removeVal(nums = [3,2,2,3,2, 2, 3], val = 3))
+            
